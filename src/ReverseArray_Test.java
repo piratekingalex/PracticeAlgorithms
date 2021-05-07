@@ -1,0 +1,18 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+public class ReverseArray_Test {
+    @Test
+    public void reverseArray_test1() {
+        assertEquals(Challenges.reverseArray(new int[]{5, -7, 8, 3}), (new int[]{3, 8, -7, 5}));
+    }
+
+    @Test
+    public void reverseArray_test2() {
+        assertEquals(Challenges.reverseArray(new int[0]), (new int[0]));
+    }
+
+    @Test
+    public void reverseArray_test3() {
+        assertEquals(Challenges.reverseArray(new int[]{1,2,3,4,5}), (new int[]{5,4,3,2,1}));
+    }
+}
