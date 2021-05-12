@@ -3,16 +3,22 @@ import java.util.Arrays;
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
     public static int countTrueFalse(boolean[] arr) {
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        int yea = 0;
+        for(boolean count : arr){
+            if (count){
+                yea++;
+            }
+        }
+        return yea;
     }
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
     public static int differenceMinMax(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        Arrays.sort(nums);
+        int min = nums[0];
+        int max = nums[nums.length-1];
+
+        return Math.abs(max-min);
     }
 
     /**
@@ -22,16 +28,14 @@ public class Challenges {
      * and then the word is pronounced with a question mark ?
      */
     public static String stutter(String str){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        String  stut = str.substring(0,2) + "... ";
+        return stut + stut + str + "?";
     }
 
     /** Write a function that takes an array of numbers and returns the second largest number.*/
     public static int secondLargestNumber(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+        Arrays.sort(nums);
+        return nums[nums.length-2];
     }
 
     /**
@@ -40,32 +44,58 @@ public class Challenges {
      If the number is a multiple of 3 the output should be "Fizz".
      If the number given is a multiple of 5, the output should be "Buzz".
      If the number given is a multiple of both 3 and 5, the output should be "FizzBuzz".
-     If the number is not a multiple of either 3 or 5, the number should be output on its own as shown in the examples below.
+     If the number is not a multiple of either 3 or 5
      The output should always be a string even if it is not a multiple of 3 or 5.
      **/
     public static String fizzBuzz(int num){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        if(num%3==0 && num % 5 ==0){
+            return "FizzBuzz";
+        }else{
+            if(num%3 == 0){
+                return "Fizz";
+            }
+            if(num%5 ==0){
+                return "Buzz";
+            }
+        }
+        return String.valueOf(num);
     }
 
     /**
      * Skip Counting
      * Write a program that gets three integers from the user.
      * Count from the first number to the second number in increments of the third number.
+     * Return the counts in a string separated by two ellipses (just like the example)
+     * Handle bad user input (numbers that cannot be counted in that pattern) by returning "Try again with better numbers!"
+     * Example:
+     * Count from: 4
+     * Count to  : 13
+     * Count by  : 3
+     *
+     * 4.. 7.. 10.. 13
+     *
      */
-    public static int[] skipCount(){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+    public static String skipCount(int countFrom, int countTo, int countBy){
+        if(countTo < countFrom){
+            return "Try again with better numbers!";
+        }
+        StringBuilder answer= new StringBuilder();
+        for (int i=countFrom; i<=countTo; i += countBy){
+            answer.append(i);
+            answer.append(".. ");
+        }
+        answer.setLength(answer.length()-3);
+        return answer.toString();
     }
 
     /** The "Reverser"
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
     public static String reverser(String reverseMe){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        StringBuilder reversed = new StringBuilder();
+        for (char ch : reverseMe.toCharArray()){
+
+        }
+        return reversed.reverse().toString();
     }
 
     /**
@@ -93,9 +123,8 @@ public class Challenges {
      * If the function's argument is null, an empty array or undefined, return an empty array
      */
     public static int[] sortNumsAscending(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+        Arrays.sort(nums);
+        return nums;
     }
 
     /**
@@ -108,4 +137,6 @@ public class Challenges {
         // you will need to change the return statement
         return new String[0];
     }
+
+
 }

@@ -85,18 +85,32 @@ public class Challenges_Test {
                 (6));
     }
 
-    /*
-    differenceMaxMin([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
-    Smallest number  -50, biggest  32.
-
-    differenceMaxMin([44, 32, 86, 19]) ➞ 67
-    Smallest number  19, biggest  86.
-
-     */
+    @Test
+    public void diffMinMax_test1(){
+        assertEquals(Challenges.differenceMinMax(new int[]{3, 0, 9, 99, -2}),101 );
+    }
+    @Test
+    public void diffMinMax_test2(){
+        assertEquals(Challenges.differenceMinMax(new int[]{ 200, 89, -23, 40, 77, 43}),223 );
+    }
 
     @Test
-    public void minMax_test1(){
+    public void diffMinMax_test3(){
+        assertEquals(Challenges.differenceMinMax(new int[]{98, 777, 45, 22 }),755);
+    }
 
+    @Test
+    public void diffMinMax_test4(){
+        assertEquals(Challenges.differenceMinMax(new int[]{-200, -40, -23, -66, -77 }),177);
+    }
+    @Test
+    public void diffMinMax_test5(){
+        assertEquals(Challenges.differenceMinMax(new int[]{10, 4, 1, 4, -10, -50, 32, 21}), 82);
+    }
+
+    @Test
+    public void diffMinMax_test6(){
+        assertEquals(Challenges.differenceMinMax(new int[]{44, 32, 86, 19}), 67);
     }
 
     @Test
@@ -115,8 +129,8 @@ public class Challenges_Test {
     }
 
     String[] strVector = new String[] {
-            "There  a bOmB.", "Hey, did you think there  a BOMB?", "This goes boom!!!",
-            "Commotion in the third, a bomb  found!", "Hey, did you find it?", "Hey, did you find the BoMb?"
+            "There is a bOmB.", "Hey, did you think there is a BOMB?", "This goes boom!!!",
+            "Commotion in the third, a bomb found!", "Hey, did you find it?", "Hey, did you find the BoMb?"
     };
     String[] resVector = new String[] {
             "DUCK!", "DUCK!", "Relax, there's no bomb.", "DUCK!", "Relax, there's no bomb.", "DUCK!"
@@ -233,7 +247,7 @@ public class Challenges_Test {
     }
 
     @Test
-    public void test17() {
+    public void stutter_test17() {
         assertEquals("so... so... so?", Challenges.stutter("so"));
     }
 
@@ -296,6 +310,31 @@ public class Challenges_Test {
     @Test
     public void fizzBuzz_test5() {
         assertEquals(Challenges.fizzBuzz(98), "98");
+    }
+
+    @Test
+    public void skipCount_test1(){
+        assertEquals(Challenges.skipCount(4, 13, 3), "4.. 7.. 10.. 13");
+    }
+
+    @Test
+    public void skipCount_test2(){
+        assertEquals(Challenges.skipCount(0, 21, 7), "0.. 7.. 14.. 21");
+    }
+
+    @Test
+    public void skipCount_test3(){
+        assertEquals(Challenges.skipCount(1, 10, 5), "1.. 6");
+    }
+
+    @Test
+    public void skipCount_test4(){
+        assertEquals(Challenges.skipCount(10, 100, 5), "10.. 15.. 20.. 25.. 30.. 35.. 40.. 45.. 50.. 55.. 60.. 65.. 70.. 75.. 80.. 85.. 90.. 95.. 100");
+    }
+
+    @Test
+    public void skipCount_test5(){
+        assertEquals(Challenges.skipCount(10, 5, 2), "Try again with better numbers!");
     }
 
     @Test
