@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Locale;
 
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
@@ -92,9 +95,15 @@ public class Challenges {
      * takes a string as input and returns that string in reverse order, with the opposite case.*/
     public static String reverser(String reverseMe){
         StringBuilder reversed = new StringBuilder();
+        // reverse case
         for (char ch : reverseMe.toCharArray()){
-
+            if(Character.isUpperCase(ch)){
+                reversed.append(Character.toLowerCase(ch));
+            }else{
+                reversed.append(Character.toUpperCase(ch));
+            }
         }
+        // reverse string
         return reversed.reverse().toString();
     }
 
@@ -103,9 +112,13 @@ public class Challenges {
      * Write a function that reverses the order of an array
      */
     public static int[] reverseArray(int[] arr){
-        // write your code here
-        // you will need to change the return statement
-        return new int[0];
+        int[] ans = new int[arr.length];
+        int iterator = 0;
+        for(int i = arr.length-1; i >= 0; i--){
+            ans[iterator] = arr[i];
+            iterator++;
+        }
+        return ans;
     }
 
     /**
@@ -113,9 +126,10 @@ public class Challenges {
      * Return "DUCK!" if found, otherwise,"Relax, there's no bomb.".
      */
     public static String duckTheBomb(String checkMe){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        if(checkMe.toUpperCase().contains("BOMB")){
+            return "DUCK!";
+        }
+        return "Relax, there's no bomb.";
     }
 
     /** Sort in Ascending Order
@@ -133,10 +147,13 @@ public class Challenges {
      * and returns a new array in the same sequential order as the old array (minus duplicates).
      */
     public static String[] removeDups(String[] str){
-        // write your code here
-        // you will need to change the return statement
-        return new String[0];
+        ArrayList<String> cleanedList = new ArrayList<>();
+        for(String each : str){
+            if(!cleanedList.contains(each)){
+                cleanedList.add(each);
+            }
+        }
+        String[] ans = cleanedList.toArray(new String[0]);
+        return ans;
     }
-
-
 }

@@ -18,4 +18,7 @@ public class Reverser_Test {
         assertEquals("RELIPMOC AVAj", Challenges.reverser("Java compiler"));
     }
 
+    @Test
+    public void reverser_test4(){assertEquals("!$KC0r ENAj", Challenges.reverser("Jane R0ck$!"));}
+
 }

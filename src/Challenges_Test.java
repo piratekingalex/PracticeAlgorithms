@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class Challenges_Test {
@@ -339,22 +341,22 @@ public class Challenges_Test {
 
     @Test
     public void removeDups_test1() {
-        assertEquals(Challenges.removeDups(new String[]{"John", "Taylor", "John"}), (new String[]{"John", "Taylor"}));
+        assertArrayEquals(Challenges.removeDups(new String[]{"John", "Taylor", "John"}), (new String[]{"John", "Taylor"}));
     }
 
     @Test
     public void removeDups_test2() {
-        assertEquals(Challenges.removeDups(new String[]{"John", "Taylor", "John", "john"}), (new String[]{"John", "Taylor", "john"}));
+        assertArrayEquals(Challenges.removeDups(new String[]{"John", "Taylor", "John", "john"}), (new String[]{"John", "Taylor", "john"}));
     }
 
     @Test
     public void removeDups_test3() {
-        assertEquals(Challenges.removeDups(new String[]{"javascript", "python", "python", "ruby", "javascript", "c", "ruby"}), (new String[]{"javascript", "python", "ruby", "c"}));
+        assertArrayEquals(Challenges.removeDups(new String[]{"javascript", "python", "python", "ruby", "javascript", "c", "ruby"}), (new String[]{"javascript", "python", "ruby", "c"}));
     }
 
     @Test
     public void removeDups_test5() {
-        assertEquals(Challenges.removeDups(new String[]{"#", "#", "%", "&", "#", "$", "&"}), (new String[]{"#", "%", "&", "$"}));
+        assertArrayEquals(Challenges.removeDups(new String[]{"#", "#", "%", "&", "#", "$", "&"}), (new String[]{"#", "%", "&", "$"}));
     }
 
 
