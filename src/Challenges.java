@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Challenges {
     /** Create a function which returns the number of true values there are in an array.*/
     public static int countTrueFalse(boolean[] lOB) {
@@ -14,10 +16,12 @@ public class Challenges {
     }
 
     /** Create a function that takes an array and returns the absolute difference between the biggest and smallest numbers.*/
-    public static int differenceMinMax(int[] nums){
-        // write your code here
-        // you will need to change the return statement
-        return Integer.parseInt(null);
+    public static int differenceMinMax(int[] range){
+        //find the max and min values in the array
+        //subtract the min value from the max: max-min = range
+        //return range
+        Arrays.sort(range);
+        return range[range.length -1] - range[0];
     }
 
     /**
@@ -27,16 +31,18 @@ public class Challenges {
      * and then the word is pronounced with a question mark ?
      */
     public static String stutter(String str){
-        // write your code here
-        // you will need to change the return statement
-        return "";
+        //use a string.length and take the 1st 2 letters
+        //add a . . . after and repeat once more
+        //then return the word with a ? after
+        return (str.substring(0,2) + "... " + str.substring(0,2) + "... " + str + "?");
     }
 
     /** Write a function that takes an array of numbers and returns the second largest number.*/
     public static int secondLargestNumber(int[] nums){
         // write your code here
         // you will need to change the return statement
-        return Integer.parseInt(null);
+        Arrays.sort(nums);
+        return nums[nums.length -2];
     }
 
     /**
@@ -51,7 +57,7 @@ public class Challenges {
     public static String fizzBuzz(int num){
         // write your code here
         // you will need to change the return statement
-        return "";
+        return " ";
     }
 
     /**
